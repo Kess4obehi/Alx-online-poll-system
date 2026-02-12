@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { vote } from "../features/polls/pollSlice";
+import PollChart from "./PollChart";
 
 function PollList() {
   const polls = useAppSelector((state) => state.polls.polls);
@@ -29,6 +30,8 @@ function PollList() {
               </button>
             </div>
           ))}
+
+          <PollChart options={poll.options} />
         </div>
       ))}
     </div>
