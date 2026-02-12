@@ -42,8 +42,12 @@ const pollSlice = createSlice({
         option.votes += 1;
       }
     },
+
+    addPoll: (state, action) => {
+      state.polls.push(action.payload);
+    },
   },
 });
 
-export const { vote } = pollSlice.actions;
+export const { vote, addPoll } = pollSlice.actions;
 export default pollSlice.reducer;
